@@ -43,6 +43,7 @@ const arr = [
     },
   ];
 
+let directors = document.querySelector(".directors");
   //<div class="directots_names">
  //     <span class="director_name"></span>
   //      <span class="career"></span>
@@ -80,10 +81,10 @@ const arr = [
     
  })
  const addCard = (objItem, container) => {
-  const item = arr (objItem);
+  const item = arr(objItem);
   container.append(item);
  }
 
- document.addEventListener("DOMContentLoaded", () => {
-  addCard(element, cardList);
+ document.addEventListener("DOMContentLoaded", () => {  
+  addCard(element, directors );
  })
