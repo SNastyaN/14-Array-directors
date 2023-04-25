@@ -43,34 +43,28 @@ const arr = [
     },
   ];
 
-let directors = document.querySelector(".directors");
-  //<div class="directots_names">
- //     <span class="director_name"></span>
-  //      <span class="career"></span>
-  //      <img src="" class="films">
-   // <span class="top_rated_film"></span>
-//        <button class="btn">Удалить</button>
- //   </div>
-
- arr.forEach ((element, index, arrey) => {
+const directorsContainer = document.querySelector(".directors");//для прикрепления блока на странице
+const topFilmsList = arr.map((director)=>director.top_rated_film);
+ arr.forEach ((director) => {
+  //создаю блок "block" с классом "directots_names"
     const block = document.createElement("div");
     block.className = "directots_names";
     const name = document.createElement("span");
     name.className = "director_name";
-    name.textContent = element.name;
+    name.textContent = director.name;
     const img = document.createElement("img");
     img.className = "films";
-    img.src = element.films;
+    img.src = director.films;
     img.alt = `это картина номер ${index} из массива картинок`;
     const career = document.createElement("span");
     career.className = "career";
-    career.textContent = element.career;
+    career.textContent = director.career;
     const top_rated_film= document.createElement("span");
     top_rated_film.className = "top_rated_film";
-    top_rated_film.textContent = element.top_rated_film;
+    top_rated_film.textContent = `Лучший фильм: ${director.top_rated_film}`;
     const button= document.createElement("button");
     button.className = "btn";
-    
+    // добавляю элементы name, img, career, op_rated_film и button в блок "block"
     block.append(name);
     block.append(img);
     block.append(career);
@@ -78,13 +72,7 @@ let directors = document.querySelector(".directors");
     block.append(button);
     //console.log(block);
     return block;
+    directorsContainer.append(block);
     
  })
- const addCard = (objItem, container) => {
-  const item = arr(objItem);
-  container.append(item);
- }
-
- document.addEventListener("DOMContentLoaded", () => {  
-  addCard(element, directors );
- })
+ 
