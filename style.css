@@ -1,4 +1,19 @@
 .directors {
-    display: flex
+    display: grid;
+    grid-template-rows: auto;
+    gap: 50px;
+    background-color: rgb(214, 192, 236);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+
     
+}
+.top{
+    display: grid;
+    grid-template-rows: auto;
+    gap: 50px;
+    background-color: rgb(156, 191, 204);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+
 }

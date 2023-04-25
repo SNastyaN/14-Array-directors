@@ -43,19 +43,20 @@ const arr = [
     },
   ];
 
-const directorsContainer = document.querySelector(".directors");//для прикрепления блока на странице
+const directorsContainer = document.querySelector(".directors");
+const topFilms = document.querySelector(".top");//для прикрепления блока на странице
 const topFilmsList = arr.map((director)=>director.top_rated_film);
- arr.forEach ((director) => {
+ arr.forEach ((director, index, arrey) => {
   //создаю блок "block" с классом "directots_names"
     const block = document.createElement("div");
     block.className = "directots_names";
     const name = document.createElement("span");
     name.className = "director_name";
     name.textContent = director.name;
-    const img = document.createElement("img");
-    img.className = "films";
-    img.src = director.films;
-    img.alt = `это картина номер ${index} из массива картинок`;
+    const filmsLink = document.createElement("a");
+    filmsLink.className = "films";
+    filmsLink.href = director.films;
+    filmsLink.textContent = "Список фильмов";
     const career = document.createElement("span");
     career.className = "career";
     career.textContent = director.career;
@@ -66,13 +67,14 @@ const topFilmsList = arr.map((director)=>director.top_rated_film);
     button.className = "btn";
     // добавляю элементы name, img, career, op_rated_film и button в блок "block"
     block.append(name);
-    block.append(img);
+    block.append(filmsLink);
     block.append(career);
     block.append(top_rated_film);
     block.append(button);
-    //console.log(block);
-    return block;
+   // console.log(block);
+   // return block;
     directorsContainer.append(block);
+    topFilms.append(top_rated_film);
     
  })
  
