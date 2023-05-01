@@ -50,19 +50,19 @@ const topFilmsList = arr.map((director)=>director.top_rated_film);
   //создаю блок "block" с классом "directots_names"
     const block = document.createElement("div");
     block.className = "directots_names";
-    const name = document.createElement("span");
+    const name = document.createElement("div");
     name.className = "director_name";
     name.textContent = director.name;
     const filmsLink = document.createElement("a");
     filmsLink.className = "films";
     filmsLink.href = director.films;
     filmsLink.textContent = "Список фильмов";
-    const career = document.createElement("span");
+    const career = document.createElement("div");
     career.className = "career";
     career.textContent = director.career;
     const top_rated_film= document.createElement("span");
     top_rated_film.className = "top_rated_film";
-    top_rated_film.textContent = `Лучший фильм: ${director.top_rated_film}`;
+    top_rated_film.textContent = director.top_rated_film;
     const button= document.createElement("button");
     button.className = "btn";
     // добавляю элементы name, img, career, op_rated_film и button в блок "block"
