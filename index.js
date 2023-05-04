@@ -46,7 +46,7 @@ const arr = [
 const directorsContainer = document.querySelector(".directors");
 const topFilms = document.querySelector(".top");//для прикрепления блока на странице
 const topFilmsList = arr.map((director)=>director.top_rated_film);
- arr.forEach ((director, index, arrey) => {
+ arr.forEach ((director) => {
   //создаю блок "block" с классом "directots_names"
     const block = document.createElement("div");
     block.className = "directots_names";
